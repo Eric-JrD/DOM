@@ -6,10 +6,13 @@ document.querySelector('#changecolor').onclick = changeColors;
 
 function addSquare(){
     let square = document.createElement("div");
+    let size = parseInt(Math.random()*11) + 45;
+    square.style.width = size + "px";
+    square.style.height = size + "px";
     square.className = "square";
     square.style.backgroundColor = getRandomColor();
-    square.style.top = parseInt(Math.random()*(300-50)) + "px";
-    square.style.left = parseInt(Math.random()*(700-50)) + "px";
+    square.style.top = parseInt(Math.random()*(300-size)) + "px";
+    square.style.left = parseInt(Math.random()*(700-size)) + "px";
     square.style.zIndex = 0;
     square.onclick = squareClick;
     squareArea.append(square);
