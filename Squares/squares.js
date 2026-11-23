@@ -1,6 +1,7 @@
 let squareArea = document.querySelector("#squarearea");
 let squareCount = parseInt(Math.random()*21) + 30;  //30-50
 document.querySelector("#add").onclick = addSquare;
+document.querySelector('#changecolor').onclick = changeColors;
 
 function addSquare(){
     let square = document.createElement("div");
@@ -9,6 +10,13 @@ function addSquare(){
     square.style.top = parseInt(Math.random()*(300-50)) + "px";
     square.style.left = parseInt(Math.random()*(700-50)) + "px";
     squareArea.append(square);
+}
+
+function changeColors(){
+    let squares = document.querySelectorAll(".square");
+    for (let i = 0; i < squares.length; i++){
+        squares[i].style.backgroundColor = getRandomColor();
+    }
 }
 
 for(let i = 0; i < squareCount; i++){
